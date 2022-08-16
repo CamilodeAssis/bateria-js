@@ -20,11 +20,11 @@ h1 {
 .keys {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 15px;
 }
 .key {
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
     border: 2px solid #FFF;
     color: #FFF;
     display: flex;
@@ -33,21 +33,30 @@ h1 {
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 50px;
 }
+
+.key:hover{
+    background-color: rgb(168, 81, 168);
+    
+}
+
 .key.active {
-    border: 2px solid #FF0;
-    color: #FF0;
+    border: 2px solid rgb(168, 81, 168);
+    color: rgb(168, 81, 168);
 }
 
 .composer {
-    width: 260px;
+    width: 265px;
     margin-top: 20px;
+    
 }
 .composer #input {
     width: 100%;
     outline: none;
     font-size: 17px;
     padding: 10px 15px;
+    border-radius: 20px;
 }
 .composer button {
     width: 100%;
@@ -58,6 +67,7 @@ h1 {
     font-size: 16px;
     margin-top: 10px;
     cursor: pointer;
+    border-radius: 20px;
 }
 .composer button:hover {
     background-color: rgba(0, 0, 0, 0.2);
