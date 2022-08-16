@@ -2,6 +2,14 @@ document.body.addEventListener('keypress', (event) => {
     playSound(event.code.toLowerCase());
 });
 
+document.querySelectorAll('.key').forEach(element => {
+    element.addEventListener('click', () => {
+      const clickedKey = element.getAttribute('data-key')
+      playSound(clickedKey)
+    })
+  });
+
+
 document.querySelector('.composer button').addEventListener('click', (event) => {
     let song = document.querySelector('#input').value;
 
@@ -15,18 +23,18 @@ document.querySelector('.composer button').addEventListener('click', (event) => 
 
 function playSound(sound) {
     let audioElement = document.querySelector (`#s_${sound}`);
-    let keyEelement = document.querySelector(`div[data-key="${sound}"]`);
+    let keyElement = document.querySelector(`div[data-key="${sound}"]`);
 
     if (audioElement) {
         audioElement.currentTime = 0;
         audioElement.play();
     }
 
-    if (keyEelement) {
-        keyEelement.classList.add('active');
+    if (keyElement) {
+        keyElement.classList.add('active');
 
         setTimeout(() => {
-            keyEelement.classList.remove('active');
+            keyElement.classList.remove('active');
         },300)
     }
 
